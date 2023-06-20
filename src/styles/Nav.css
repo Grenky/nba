@@ -1,0 +1,17 @@
+.header-nav-menu {
+    height: 100%;
+    width: 20vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.nav-link {
+    color: #9A9DA1;
+    font-size: 18px;
+    font-weight: 600;
+    font-style: normal;
+    text-decoration: none;
+}
+.nav-link:hover {
+    color: #FFFFFF;
+}
