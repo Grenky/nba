@@ -17,7 +17,7 @@ function App() {
         <Route path="Players" element={<Players />} />
         <Route path="About" element={<About />} />
     </Routes>
-    
+
     </div>
   );
 }

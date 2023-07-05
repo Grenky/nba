@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../styles/Home.css';
+ import axios from 'axios';
 
  export default function Home() {
 
-    let API = "bdae2f6a3897f92574d93671432763b6d065e6826ed1ddc2bf5057f9c5d7d58c";
+    const [test, setTest] = useState();
+    const url = "https://api.coindesk.com/v1/bpi/currentprice.json";
+
+    useEffect(() => {
+        axios
+        .get(url)
+        .then(response => {
+            setTest(response.data.time.updated)});
+    }, []);
 
     return(
         <div className="home-wrapper">
             <h1>H</h1>
+            <p>{test}</p>
         </div>
     )
  }
