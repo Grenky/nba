@@ -7,8 +7,8 @@ import {Link} from 'react-router-dom';
     return(
         <div className="header-wrapper">
             <div className="header_logo-wrapper">
-                <img src="../images/NBA_logo.png" alt="" className="logo"/>
-                <Link className='header_log-text' to='/'>NBA</Link>
+                <img src="../images/logo_M.check.jpg" alt="" className="logo"/>
+                <Link className='header_log-text' to='/'>M.Check</Link>
             </div>
             <Nav />
         </div>

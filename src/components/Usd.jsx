@@ -22,19 +22,20 @@ export default function Usd() {
         });
     }, [])
     return(
-        <div className="teams-wrapper">
-            <h1>Teams!</h1>
-            {isLoading ? (<h1>Loading...</h1>) : (
-            usd &&
-                <div>
-                    <p>{usd.code}</p>
-                    <p>{usd.sybol}</p>
-                    <p>{usd.rate}</p>
-                    <p>{usd.description}</p>
-                    <p>{usd.rate_float}</p>   
-                </div>
-                )
-            }
+        <div className="usd-wrapper">
+            <div className='usd-wrapper_content'>
+                {isLoading ? (<h1>Loading...</h1>) : (
+                usd &&
+                    <div className='usd-wrapper_content__content__box'>
+                        <p  className='usd-wrapper_content__content__box_text_title'>{usd.code}</p>
+                        <p  className='usd-wrapper_content__content__box_text'>{usd.sybol}</p>
+                        <p  className='usd-wrapper_content__content__box_text'>{usd.rate}</p>
+                        <p  className='usd-wrapper_content__content__box_text'>{usd.description}</p>
+                        <p  className='usd-wrapper_content__content__box_text'>{usd.rate_float}</p>   
+                    </div>
+                    )
+                }
+            </div> 
         </div>
     )
 }

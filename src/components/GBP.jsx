@@ -23,16 +23,15 @@ export default function GBP() {
     }, [])
 
     return(
-        <div className="players-wrapper">
-            <h1>Players!</h1>
+        <div className="GBP-wrapper">
             {isLoading ? (<h1>Loading...</h1>) : ( 
             gbp &&
-                <div>
-                    <p>{gbp.code}</p>
-                    <p>{gbp.sybol}</p>
-                    <p>{gbp.rate}</p>
-                    <p>{gbp.description}</p>
-                    <p>{gbp.rate_float}</p>
+                <div className='gbp-wrapper_content'>
+                    <p className='gbp-wrapper_content__content__box_text_title'>{gbp.code}</p>
+                    <p className='gbp-wrapper_content__content__box_text'>{gbp.sybol}</p>
+                    <p className='gbp-wrapper_content__content__box_text'>{gbp.rate}</p>
+                    <p className='gbp-wrapper_content__content__box_text'>{gbp.description}</p>
+                    <p className='gbp-wrapper_content__content__box_text'>{gbp.rate_float}</p>
                 </div>
                 )
             }

@@ -1,0 +1,27 @@
+.usd-wrapper {
+    background-image: url(/public/images/1646014805_32-kartinkin-net-p-ssha-kartinki-dlya-prezentatsii-36.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.usd-wrapper_content {
+    min-width: 300px;
+    height: 300px;
+    background-color: white;
+    opacity: 0.7;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.usd-wrapper_content__content__box_text_title {
+    font-size: 30px;
+    font-weight: bold;
+}
+.usd-wrapper_content__content__box_text {
+    font-size: 20px;
+}

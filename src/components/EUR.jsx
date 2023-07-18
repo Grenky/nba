@@ -22,16 +22,15 @@ export default function EUR() {
     }, [])
 
     return(
-        <div className="about-wrapper">
-            <h1>About!</h1>
+        <div className="EUR-wrapper">
             {isLoading ? (<h1>Loading...</h1>) : ( 
             eur &&
-                <div>
-                    <p>{eur.code}</p>
-                    <p>{eur.sybol}</p>
-                    <p>{eur.rate}</p>
-                    <p>{eur.description}</p>
-                    <p>{eur.rate_float}</p>
+                <div className='EUR-wrapper_content'>
+                    <p className='EUR-wrapper_content__content__box_text_title'>{eur.code}</p>
+                    <p className='EUR-wrapper_content__content__box_text'>{eur.sybol}</p>
+                    <p className='EUR-wrapper_content__content__box_text'>{eur.rate}</p>
+                    <p className='EUR-wrapper_content__content__box_text'>{eur.description}</p>
+                    <p className='EUR-wrapper_content__content__box_text'>{eur.rate_float}</p>
                 </div>
             )
             }
