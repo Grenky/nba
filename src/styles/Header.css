@@ -23,5 +23,12 @@
     height: 50px;
     border-radius: 50%;
 }
+.SIgnIn {
+    text-decoration: none;
+    color: white;
+    border-left: 1px solid white;
+    margin-left: 20px;
+    padding-left: 20px;
+}
 
 
