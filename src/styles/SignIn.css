@@ -48,3 +48,8 @@
     justify-content: space-around;
     padding: 0 130px 0px 130px;
 }
+.successful-text {
+    color: green;
+    visibility: hidden;
+}
+
