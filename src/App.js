@@ -7,6 +7,7 @@ import EUR from './components/EUR';
 import Home from './components/Home';
 import { Routes, Route } from 'react-router-dom';
 import SignIn from './components/SIgnIn';
+import UserAccount from './components/UserAccount';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="GBP" element={<GBP />} />
         <Route path="EUR" element={<EUR />} />
         <Route path="SignIn" element={<SignIn />} />
+        <Route path="UserAccount" element={<UserAccount />} />
     </Routes>
 
     </div>

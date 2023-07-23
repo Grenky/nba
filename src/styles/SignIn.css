@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
 }
 .signin-wrapper__container {
     min-width: 600px;
@@ -50,6 +50,10 @@
 }
 .successful-text {
     color: green;
+    visibility: hidden;
+}
+.error-text {
+    color: red;
     visibility: hidden;
 }
 
