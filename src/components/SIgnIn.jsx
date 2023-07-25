@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import '../styles/SignIn.css';
+import {Link} from 'react-router-dom';
 
 export default function SignIn() {
 
@@ -20,15 +21,20 @@ export default function SignIn() {
             event.preventDefault();
         };
 
-       
+        // const visibleBlock = () => {
+        //     return setMessage(!message);
+        // }
+        // const visibleError = () => {
+        //     return setMessageError(!messageError);
+        // }
 
         function showMessage() {
             if(login === 'test' && password ==='test') {
                 setMessage(true);
                 setMessageError(false);
             } else {
-            setMessageError(true);
-            setMessage(false);
+                setMessageError(true);
+                setMessage(false);
             }
         }
 
@@ -54,7 +60,7 @@ export default function SignIn() {
                 </form>
                 <div className='signin-wrapper__container__footer'>
                     <p className='signin-wrapper__container__footer-forgot-link'>Forgot password?</p>
-                    <button className='signin-wrapper__container__footer-btn'>Next</button>
+                    <Link className='signin-wrapper__container__footer-btn' to='/UserAccount'>Next</Link>
                 </div>
                 {message && ( 
                      <h2 className='successful-text' style={{ visibility: 'visible' }}>Successful Login</h2>

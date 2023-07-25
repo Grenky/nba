@@ -36,6 +36,11 @@
     border: 1px solid #9A9D8A;
     cursor: pointer;
 }
+.signin-wrapper__container__footer-btn {
+    text-decoration: none;
+    color: #000000;
+    padding-top: 5px;
+}
 .signin-wrapper__container__form__btn:hover, .signin-wrapper__container__footer-btn:hover {
     background-color: #9A9D8A;
     color: #fff;

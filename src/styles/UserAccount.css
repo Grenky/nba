@@ -1,0 +1,13 @@
+.user-acc-wrapper {
+    height: 100%;
+    width: 100%;
+    padding: 100px;
+}
+.user-acc-wrapper_container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    justify-content: space-around;
+}
