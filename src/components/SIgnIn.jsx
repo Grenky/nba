@@ -2,12 +2,15 @@ import { useEffect, useState } from 'react';
 import '../styles/SignIn.css';
 import {Link} from 'react-router-dom';
 
+
 export default function SignIn() {
 
         const[login, setLogin] = useState('');
         const[password, setPassword] = useState('');
         const[message, setMessage] = useState(false);
         const[messageError, setMessageError] = useState(false);
+        const[loggedIn, setLoggedIn] = useState(false);
+        const[notLogggedIn, setNotLoggedIn] = useState(false);
         
         const handleLoginChange = (event) => {
             setLogin(event.target.value);
@@ -30,11 +33,20 @@ export default function SignIn() {
 
         function showMessage() {
             if(login === 'test' && password ==='test') {
+                setLoggedIn(true);
                 setMessage(true);
-                setMessageError(false);
+                setMessageError(false);         
             } else {
+                setLoggedIn(false);
                 setMessageError(true);
                 setMessage(false);
+            }
+        }
+        function emptyFieldsMessage() {
+            if(login === 'test' && password ==='test') {
+                setNotLoggedIn(false);
+            } else {
+                setNotLoggedIn(true);
             }
         }
 
@@ -49,18 +61,26 @@ export default function SignIn() {
         }
     }, [message]);
 
+
+
+
     return(
         <div className="signin-wrapper">
             <div className='signin-wrapper__container'>
                 <h1 className='signin-title'>Sign In</h1>
                 <form className='signin-wrapper__container__form' onSubmit={handleSubmit}>
                     <input className='signin-wrapper__container__form__login' placeholder='Email' value={login} onChange={handleLoginChange}></input>
+
                     <input className='signin-wrapper__container__form__password' placeholder='Password' value={password} onChange={handlePasswordChange}></input>
                     <button className='signin-wrapper__container__form__btn'  onClick={showMessage}>Sign In</button>
                 </form>
                 <div className='signin-wrapper__container__footer'>
                     <p className='signin-wrapper__container__footer-forgot-link'>Forgot password?</p>
-                    <Link className='signin-wrapper__container__footer-btn' to='/UserAccount'>Next</Link>
+                    {loggedIn ? (
+                    <Link className='signin-wrapper__container__footer-btn' to='/UserAccount' onClick={emptyFieldsMessage}>Next</Link>
+                    ) : (
+                    <button className='signin-wrapper__container__footer-btn'  onClick={emptyFieldsMessage}>Next</button>
+                    )}
                 </div>
                 {message && ( 
                      <h2 className='successful-text' style={{ visibility: 'visible' }}>Successful Login</h2>
@@ -68,6 +88,9 @@ export default function SignIn() {
                 }
                 {messageError && (
                     <h2 className='error-text' style={{ visibility: 'visible' }}>Login or password not correct</h2>
+                )}
+                {notLogggedIn &&(
+                    <p className='error-text2' style={{ visibility: 'visible' }}>fields is empty</p>
                 )}           
             </div>
         </div>

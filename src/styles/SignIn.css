@@ -57,7 +57,7 @@
     color: green;
     visibility: hidden;
 }
-.error-text {
+.error-text, .error-text2 {
     color: red;
     visibility: hidden;
 }

@@ -11,3 +11,19 @@
     align-items: flex-start;
     justify-content: space-around;
 }
+.user-acc-wrapper_save-btn {
+    width: 80px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #9A9D8A;
+    cursor: pointer;
+    float: left;
+}
+.user-acc-wrapper_save-btn:hover {
+    background-color: #9A9D8A;
+    color: #fff;
+}
+.avatar-btn[type="file"] {
+    color: transparent;
+}
+
