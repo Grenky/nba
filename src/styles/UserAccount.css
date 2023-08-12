@@ -27,3 +27,8 @@
     color: transparent;
 }
 
+.user-acc-wrapper_container__userphoto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
