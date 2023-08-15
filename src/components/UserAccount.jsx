@@ -48,11 +48,12 @@ export default function UserAccount() {
                         <h2>{userName}</h2>
                 <input type='text' onChange={handleNameChange} placeholder="User Name" value={editedUserName} className={isEditMode ? 'edit-mode' : ''}></input>
                 {isEditMode ? (
-                    <button onClick={() => setIsEditMode(true)}>Edit</button>
+                    <button onClick={() => setIsEditMode(false)}>Cancel</button>
+                    
                 ) : ( 
                     <>
-                    <button onClick={handleSaveName}>edit</button>
-                    <button onClick={() => setIsEditMode(false)}>Cancel</button>
+                    <button onClick={handleSaveName}>Save</button>
+                    <button onClick={() => setIsEditMode(true)}>Edit</button>
                     </>
                 )}
                 <div className="user-acc-wrapper_container__userinfo">
