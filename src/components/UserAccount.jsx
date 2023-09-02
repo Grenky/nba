@@ -7,6 +7,7 @@ export default function UserAccount() {
     const[avatar, setAvatar] = useState('../images/useravatar.png');
     const[userDescription, setUserDescription] = useState('');
     const[editedUserName, setEditedUserName] = useState(userName);
+    const[open, setOpen] = useState(false);
    
     const[isEditMode, setIsEditMode] = useState(false);
 
@@ -23,9 +24,14 @@ export default function UserAccount() {
         }
 
         if(file) {
-            reader.readAsDataURL(file);
-        }
+            if(file.type.startsWith('image/')) {
+                reader.readAsDataURL(file);  
+            } else {
+                setOpen(true);
+            }
+        } 
     };
+    
 
 
     const handleSave = () => {   
@@ -41,8 +47,11 @@ export default function UserAccount() {
     return(
         <div className="user-acc-wrapper">
             <div className="user-acc-wrapper_container">
+                <div className={`popup-error-window ${open ? 'show': ''}`}>
+                    clownada
+                </div>
                 <div className="user-acc-wrapper_container__userphoto">
-                    <img src={avatar} alt="useravatar"></img>
+                    <img className='user-avatar' src={avatar} alt="useravatar"></img>
                     <input className="avatar-btn" type="file" accept="image/*"  onChange={handleAvatarChange} />
                 </div>    
                         <h2>{userName}</h2>

@@ -36,3 +36,18 @@
     border: 2px solid blue;
     
 }
+.user-avatar {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+}
+.popup-error-window {
+    height: 200px;
+    width: 500px;
+    background-color: rgb(219, 209, 209);
+    position: absolute;
+    left: 34%;
+    top: 30%;
+    visibility: hidden;
+    border-radius: 5px;
+}
