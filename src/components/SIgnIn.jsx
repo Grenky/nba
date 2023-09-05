@@ -11,6 +11,8 @@ export default function SignIn() {
         const[messageError, setMessageError] = useState(false);
         const[loggedIn, setLoggedIn] = useState(false);
         const[notLogggedIn, setNotLoggedIn] = useState(false);
+        const[emptyFieldsMessageVisible, setEmptyFieldsMessageVisible] = useState(false);
+
         
         const handleLoginChange = (event) => {
             setLogin(event.target.value);
@@ -35,22 +37,39 @@ export default function SignIn() {
             if(login === 'test' && password ==='test') {
                 setLoggedIn(true);
                 setMessage(true);
-                setMessageError(false);         
-            } else {
+                setMessageError(false);
+                setEmptyFieldsMessageVisible(false); 
+                setNotLoggedIn(false);        
+            } else if(login === ''|| password === '') {
                 setLoggedIn(false);
+                setMessageError(false);
+                setMessage(false);
+                setEmptyFieldsMessageVisible(true);
+                setNotLoggedIn(true);
+            } else {
+                setLoggedIn(true);
                 setMessageError(true);
                 setMessage(false);
-            }
-        }
-        function emptyFieldsMessage() {
-            if(login === 'test' && password ==='test') {
-                setNotLoggedIn(false);
-            } else {
+                setEmptyFieldsMessageVisible(false);
                 setNotLoggedIn(true);
             }
         }
 
-  
+
+
+        function emptyFieldsMessage(login, password, message, messageError) {
+            if(login === 'test' && password ==='test') {
+                    if(message === true && messageError === true) {
+                        setNotLoggedIn(false);                      
+                    } else {
+                        setNotLoggedIn(true);                       
+                    }
+                    setEmptyFieldsMessageVisible(false);                    
+            } else {
+                setNotLoggedIn(true);
+                setEmptyFieldsMessageVisible(true);
+            }
+        };
 
     useEffect(() => {
         if(message) {
@@ -89,10 +108,10 @@ export default function SignIn() {
                 {messageError && (
                     <h2 className='error-text' style={{ visibility: 'visible' }}>Login or password not correct</h2>
                 )}
-                {notLogggedIn &&(
+                {emptyFieldsMessageVisible && (
                     <p className='error-text2' style={{ visibility: 'visible' }}>fields is empty</p>
                 )}           
             </div>
         </div>
     )
-}
+};
