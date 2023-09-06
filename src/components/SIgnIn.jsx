@@ -94,7 +94,7 @@ export default function SignIn() {
                     <button className='signin-wrapper__container__form__btn'  onClick={showMessage}>Sign In</button>
                 </form>
                 <div className='signin-wrapper__container__footer'>
-                    <p className='signin-wrapper__container__footer-forgot-link'>Forgot password?</p>
+                    <Link className='signin-wrapper__container__footer-forgot-link' to='/ForgotPassword'>Forgot password?</Link>
                     {loggedIn ? (
                     <Link className='signin-wrapper__container__footer-btn' to='/UserAccount' onClick={emptyFieldsMessage}>Next</Link>
                     ) : (

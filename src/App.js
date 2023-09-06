@@ -7,6 +7,7 @@ import Home from './components/Home';
 import { Routes, Route } from 'react-router-dom';
 import SignIn from './components/SIgnIn';
 import UserAccount from './components/UserAccount';
+import ForgotPassword from './components/ForgotPassword';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="EUR" element={<EUR />} />
         <Route path="SignIn" element={<SignIn />} />
         <Route path="UserAccount" element={<UserAccount />} />
+        <Route path="ForgotPassword" element={<ForgotPassword />} />
     </Routes>
 
     </div>
