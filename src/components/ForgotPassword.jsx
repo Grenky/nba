@@ -18,6 +18,8 @@ export default  function ForgotPassword() {
                     {errors.Login && <p className="kek">This field is required</p>}
                     <input className="Password" {...register("Password", { rattern: /^[A-Za-z]+$/i, required : true  })} placeholder="New Password"/>
                     {errors.Password && <p className="kek">This field is required</p>}
+                    <input className="Password" {...register("Password", { rattern: /^[A-Za-z]+$/i, required : true  })} placeholder="New Password"/>
+                    {errors.Password && <p className="kek">This field is required</p>}
                     <button type="submit" className="forgotPussBtn">Submit</button>
                 </form>
             </div>
