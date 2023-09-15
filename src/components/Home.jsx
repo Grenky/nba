@@ -20,6 +20,7 @@ import axios from 'axios';
     return(
         <div className="home-wrapper">
             <h1>H</h1>
+            <h2>h2</h2>
             <p>{test}</p>
             
         </div>
